@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 function shopContents() {
     return (
         <div>
-            <h1>hello</h1>
+            <div className='shop-header'>
+                <Link to='/' className='BackHome'>Home</Link>
+                <div>hello</div>
+            </div>
         </div>
     )
 }

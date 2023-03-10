@@ -52,3 +52,20 @@ code {
   position: absolute;
   margin-left: 3rem;
 }
+
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 3rem;
+}
+
+.BackHome {
+  text-decoration: none;
+  color: inherit;
+}
+
+.homeShop {
+  text-decoration: none;
+  color: inherit;
+}

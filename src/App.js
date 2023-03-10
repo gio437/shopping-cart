@@ -7,12 +7,12 @@ function App() {
   return (
     <div>
       <div className='header'>
-        <h1>Fruits</h1>
-        <h2>Shop</h2>
+        <h2>Fruits</h2>
+        <Link className='homeShop' to='/shop'> <h2>Shop</h2></Link>
         <h2>Cart</h2>
       </div>
       <div className='info'>
-        <div className='slogan'>Check out this wide assortment of fruits! <img class='shelf' alt='' src={Shelf}></img></div>
+        <div className='slogan'>Check out this wide assortment of fruits! <img className='shelf' alt='' src={Shelf}></img></div>
         <Link to='/shop' className='shopBtn'>SHOP</Link>
       </div>
     </div>
