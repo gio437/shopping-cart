@@ -75,6 +75,40 @@ code {
   background-color: white;
 }
 
+.cart > div  {
+  background-color: red;
+}
+
+.cartImg {
+  width: 7rem;
+  height: 7rem;
+  margin: 1rem;
+}
+
 .cartBtn {
   cursor: pointer;
+}
+
+.cardContain {
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 12rem;
+}
+
+.card {
+  background-color: white;
+  width: 15rem;
+  height: 15rem;
+}
+
+.fruitPics {
+  width: 15rem;
+  height: 15rem;
+}
+
+.fruitDescription {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
 }

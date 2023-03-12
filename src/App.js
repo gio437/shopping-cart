@@ -5,26 +5,28 @@ import { useState } from 'react';
 // import { useEffect } from 'react';
 import React from 'react';
 // import ShopPage from './ShopPage.js';
+// import ShowCart from './ShowCart';
 
-function App() {
-  let [shown, nextVal] = useState(0);
+function App(props) {
+  let [toggleHeader, setToggleHeader] = useState(0);
 
   function ShowCart() {
       const cartDisplay = document.querySelector('.cart');
-      if (shown === 0) {
+      if (toggleHeader === 0) {
         cartDisplay.style.display = 'block';
-        nextVal(prev => prev = 1);
+        setToggleHeader(prev => prev = 1);
       }
       else {
-        nextVal(prev => prev = 0);
+        setToggleHeader(prev => prev = 0);
         cartDisplay.style.display = 'none';
       }
   }
 
   return (
+    // {ShowCart},
     <div>
       <div className='cart'>
-        <div>hello</div>
+        <div>hello</div> {/* <= this will contain props */}
       </div>
       <div className='header'>
         <h3>Home</h3>
