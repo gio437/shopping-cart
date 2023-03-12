@@ -59,7 +59,7 @@ function ShopContents() {
             </div>
             <div className='header'>
                 <h3>Catalog</h3>
-                <Link to='/' className='BackHome'><h3>Home</h3></Link>
+                <Link to='/shopping-cart' className='BackHome'><h3>Home</h3></Link>
                 <h3 className='cartBtn' onClick={ShowCart}>Cart</h3>
             </div>
             <div className='cardContain'>
