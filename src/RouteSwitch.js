@@ -7,8 +7,8 @@ const RouteSwitch = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/shop" element={<ShopPage />} />
+        <Route path='https://gio437.github.io/shopping-cart/' element={<App />} />
+        <Route path="https://gio437.github.io/shopping-cart/shop" element={<ShopPage />} />
       </Routes>
     </BrowserRouter>
   );
