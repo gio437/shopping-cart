@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Watermelon from './images/watermelon.png';
 import Apple from './images/apple.png';
 import Orange from './images/orange.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import App from './App';
 
 function ShopContents() {
@@ -13,12 +13,52 @@ function ShopContents() {
   let [cartOrangeItems, setCartOrangeItems] = useState([]);
   let [totalCartItems, setTotalCartItems] = useState(0);
 
+
   function sumTotal() {
     setTotalCartItems(prev => prev = cartMelonItems.length + cartAppleItems.length + cartOrangeItems.length);
+  }
+
+  useEffect(() => {
     const counterDiv = document.querySelector('.counter');
     console.log(totalCartItems);
-    counterDiv.textContent = 'Total Items ' + totalCartItems;
-  }
+    counterDiv.textContent = 'Total Items: ' + totalCartItems;
+  }, [totalCartItems]);
+
+  useEffect(() => {
+    const cartDisplay = document.querySelector('.cart');
+    cartMelonItems.forEach(item => {
+      const itemTag = document.createElement('img');
+      itemTag.classList.add('melonImg');
+      itemTag.id = 'cartImg';
+      itemTag.src = item;
+      cartDisplay.appendChild(itemTag);
+      sumTotal();
+  })
+  }, [cartMelonItems]);
+
+  useEffect(() => {
+    const cartDisplay = document.querySelector('.cart');
+    cartAppleItems.forEach(item => {
+      const itemTag = document.createElement('img');
+      itemTag.classList.add('appleImg');
+      itemTag.id = 'cartImg';
+      itemTag.src = item;
+      cartDisplay.appendChild(itemTag);
+      sumTotal();
+  })
+  }, [cartAppleItems]);
+
+  useEffect(() => {
+    const cartDisplay = document.querySelector('.cart');
+    cartOrangeItems.forEach(item => {     // you need to allow user to select amount
+      const itemTag = document.createElement('img');
+      itemTag.classList.add('orangeImg');
+      itemTag.id = 'cartImg';
+      itemTag.src = item;
+      cartDisplay.appendChild(itemTag);
+  })
+  sumTotal();
+  }, [cartOrangeItems]);
 
   function ShowCart() {
     const cartDisplay = document.querySelector('.cart');
@@ -38,24 +78,11 @@ function ShopContents() {
       melonDiv.remove();
     })
 
-    let firstItem = 0; //displays item on first render
-    if (firstItem === 0) {
-      cartMelonItems.splice(0, 1, Watermelon);
-      firstItem = 1;
-    }
     const cartDisplay = document.querySelector('.cart');
     cartDisplay.style.display = 'flex';
     let img = Watermelon;
     setToggleHeader(prev => prev = 1);
     setCartMelonItems(prev => prev.concat(img));
-    cartMelonItems.forEach(item => {
-        const itemTag = document.createElement('img');
-        itemTag.classList.add('melonImg');
-        itemTag.id = 'cartImg';
-        itemTag.src = item;
-        cartDisplay.appendChild(itemTag);
-    })
-    sumTotal();
   }
 
   function displayAppleCart() {
@@ -64,24 +91,11 @@ function ShopContents() {
       AppleDiv.remove();
     })
 
-    let firstItem = 0; //displays item on first render
-    if (firstItem === 0) {
-      cartAppleItems.splice(0, 1, Apple);
-      firstItem = 1;
-    }
     const cartDisplay = document.querySelector('.cart');
     cartDisplay.style.display = 'flex';
     let img = Apple;
     setToggleHeader(prev => prev = 1);
     setCartAppleItems(prev => prev.concat(img));
-    cartAppleItems.forEach(item => {
-        const itemTag = document.createElement('img');
-        itemTag.classList.add('appleImg');
-        itemTag.id = 'cartImg';
-        itemTag.src = item;
-        cartDisplay.appendChild(itemTag);
-    })
-    sumTotal();
   }
 
   function displayOrangeCart() {
@@ -90,24 +104,11 @@ function ShopContents() {
       OrangeDiv.remove();
     })
 
-    let firstItem = 0; //displays item on first render
-    if (firstItem === 0) {
-      cartOrangeItems.splice(0, 1, Orange);
-      firstItem = 1;
-    }
     const cartDisplay = document.querySelector('.cart');
     cartDisplay.style.display = 'flex';
     let img = Orange;
     setToggleHeader(prev => prev = 1);
     setCartOrangeItems(prev => prev.concat(img));
-    cartOrangeItems.forEach(item => {     // you need to allow user to select amount
-        const itemTag = document.createElement('img');
-        itemTag.classList.add('orangeImg');
-        itemTag.id = 'cartImg';
-        itemTag.src = item;
-        cartDisplay.appendChild(itemTag);
-    })
-    sumTotal();
   }
 
 
@@ -115,8 +116,8 @@ function ShopContents() {
     return (
         <div>
             <div className='cart'>
+            <div className='counter'></div>
                 <h3>Cart</h3>
-                <div className='counter'></div>
             </div>
             <div className='header'>
                 <h3>Catalog</h3>
