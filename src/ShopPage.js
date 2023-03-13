@@ -5,12 +5,12 @@ import Apple from './images/apple.png';
 import Orange from './images/orange.png';
 import { useState } from 'react';
 import App from './App';
-//import App from './App';
-// import ShowCart from './ShowCart';
 
 function ShopContents() {
   let [toggleHeader, setToggleHeader] = useState(0);
-  let [cartItems, setCartItems] = useState({});
+  let [cartMelonItems, setCartMelonItems] = useState([]);
+  let [cartAppleItems, setCartAppleItems] = useState([]);
+  let [cartOrangeItems, setCartOrangeItems] = useState([]);
 
   function ShowCart() {
     const cartDisplay = document.querySelector('.cart');
@@ -24,30 +24,79 @@ function ShopContents() {
       }
   }
 
-  function displayCartWatermelon() {
+  function displayMelonCart() {
+    const existingImages = document.querySelectorAll('.melonImg');
+    existingImages.forEach(melonDiv => {
+      melonDiv.remove();
+    })
+
+    let firstItem = 0; //displays item on first render
+    if (firstItem === 0) {
+      cartMelonItems.splice(0, 1, Watermelon);
+      firstItem = 1;
+    }
     const cartDisplay = document.querySelector('.cart');
-    let img = Watermelon;
-    let txt = 'Watermelon';
-
-    const watermelonImg = document.createElement('img');
-    const watermelonTxt = document.createElement('div');
-    watermelonImg.src = img;
-    watermelonTxt.textContent = txt;
-    watermelonImg.classList.add('cartImg');
-    // watermelonTxt.classList.add('fruitDescription');
-    cartDisplay.appendChild(watermelonImg);
-    // cartDisplay.appendChild(watermelonTxt);
     cartDisplay.style.display = 'flex';
+    let img = Watermelon;
+    setToggleHeader(prev => prev = 1);
+    setCartMelonItems(prev => prev.concat(img));
+    cartMelonItems.forEach(item => {
+        const itemTag = document.createElement('img');
+        itemTag.classList.add('melonImg');
+        itemTag.id = 'cartImg';
+        itemTag.src = item;
+        cartDisplay.appendChild(itemTag);
+    })
   }
 
-  const appleInfo = {
-    img: {Apple},
-    txt: 'Apple'
+  function displayAppleCart() {
+    const existingImages = document.querySelectorAll('.appleImg');
+    existingImages.forEach(AppleDiv => {
+      AppleDiv.remove();
+    })
+
+    let firstItem = 0; //displays item on first render
+    if (firstItem === 0) {
+      cartAppleItems.splice(0, 1, Apple);
+      firstItem = 1;
+    }
+    const cartDisplay = document.querySelector('.cart');
+    cartDisplay.style.display = 'flex';
+    let img = Apple;
+    setToggleHeader(prev => prev = 1);
+    setCartAppleItems(prev => prev.concat(img));
+    cartAppleItems.forEach(item => {
+        const itemTag = document.createElement('img');
+        itemTag.classList.add('appleImg');
+        itemTag.id = 'cartImg';
+        itemTag.src = item;
+        cartDisplay.appendChild(itemTag);
+    })
   }
 
-  const orangeInfo = {
-    img: {Orange},
-    txt: 'Orange'
+  function displayOrangeCart() {
+    const existingImages = document.querySelectorAll('.orangeImg');
+    existingImages.forEach(OrangeDiv => {
+      OrangeDiv.remove();
+    })
+
+    let firstItem = 0; //displays item on first render
+    if (firstItem === 0) {
+      cartOrangeItems.splice(0, 1, Orange);
+      firstItem = 1;
+    }
+    const cartDisplay = document.querySelector('.cart');
+    cartDisplay.style.display = 'flex';
+    let img = Orange;
+    setToggleHeader(prev => prev = 1);
+    setCartOrangeItems(prev => prev.concat(img));
+    cartOrangeItems.forEach(item => {
+        const itemTag = document.createElement('img');
+        itemTag.classList.add('orangeImg');
+        itemTag.id = 'cartImg';
+        itemTag.src = item;
+        cartDisplay.appendChild(itemTag);
+    })
   }
 
 
@@ -55,7 +104,7 @@ function ShopContents() {
     return (
         <div>
             <div className='cart'>
-
+                <h3>Cart</h3>
             </div>
             <div className='header'>
                 <h3>Catalog</h3>
@@ -64,15 +113,15 @@ function ShopContents() {
             </div>
             <div className='cardContain'>
                 <div className='card'>
-                    <img onClick={displayCartWatermelon} className='fruitPics'src={Watermelon} alt=''></img>
+                    <img onClick={displayMelonCart} className='fruitPics'src={Watermelon} alt=''></img>
                     <div className='fruitDescription'>Watermelon</div>
                 </div>
                 <div className='card'>
-                    <img className='fruitPics' src={Apple} alt=''></img>
+                    <img onClick={displayAppleCart} className='fruitPics' src={Apple} alt=''></img>
                     <div className='fruitDescription'>Apple</div>
                 </div>
                 <div className='card'>
-                    <img className='fruitPics' src={Orange} alt=''></img>
+                    <img onClick={displayOrangeCart} className='fruitPics' src={Orange} alt=''></img>
                     <div className='fruitDescription'>Orange</div>
                 </div>
             </div>

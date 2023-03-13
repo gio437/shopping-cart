@@ -2,12 +2,13 @@ import './App.css';
 import Shelf from './images/shelf.jpg';
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
+import Watermelon from './images/watermelon.png';
 // import { useEffect } from 'react';
 import React from 'react';
 // import ShopPage from './ShopPage.js';
 // import ShowCart from './ShowCart';
 
-function App(props) {
+export default function App() {
   let [toggleHeader, setToggleHeader] = useState(0);
 
   function ShowCart() {
@@ -26,7 +27,7 @@ function App(props) {
     // {ShowCart},
     <div>
       <div className='cart'>
-        <div>hello</div> {/* <= this will contain props */}
+
       </div>
       <div className='header'>
         <h3>Home</h3>
@@ -34,11 +35,26 @@ function App(props) {
         <h3 className='cartBtn' onClick={ShowCart}>Cart</h3>
       </div>
       <div className='info'>
-        <div className='slogan'>Check out this wide assortment of fruits! <img className='shelf' alt='' src={Shelf}></img></div>
+        <img className='shelf' alt='' src={Shelf}></img>
+        <div className='slogan'>Check out this wide assortment of fruits!</div>
         <Link to='/shop' className='shopBtn'>SHOP</Link>
       </div>
     </div>
   );
 }
 
-export default App;
+export function displayMelonCart(props) {
+  const cartDisplay = document.querySelector('.cart');
+  let img = Watermelon;
+  let txt = 'Watermelon';
+
+  const watermelonImg = document.createElement('img');
+  const watermelonTxt = document.createElement('div');
+  watermelonImg.src = img;
+  watermelonTxt.textContent = txt;
+  watermelonImg.classList.add('cartImg');
+  // watermelonTxt.classList.add('fruitDescription');
+  cartDisplay.appendChild(watermelonImg);
+  // cartDisplay.appendChild(watermelonTxt);
+  cartDisplay.style.display = 'flex';
+}
