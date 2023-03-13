@@ -11,6 +11,14 @@ function ShopContents() {
   let [cartMelonItems, setCartMelonItems] = useState([]);
   let [cartAppleItems, setCartAppleItems] = useState([]);
   let [cartOrangeItems, setCartOrangeItems] = useState([]);
+  let [totalCartItems, setTotalCartItems] = useState(0);
+
+  function sumTotal() {
+    setTotalCartItems(prev => prev = cartMelonItems.length + cartAppleItems.length + cartOrangeItems.length);
+    const counterDiv = document.querySelector('.counter');
+    console.log(totalCartItems);
+    counterDiv.textContent = 'Total Items ' + totalCartItems;
+  }
 
   function ShowCart() {
     const cartDisplay = document.querySelector('.cart');
@@ -47,6 +55,7 @@ function ShopContents() {
         itemTag.src = item;
         cartDisplay.appendChild(itemTag);
     })
+    sumTotal();
   }
 
   function displayAppleCart() {
@@ -72,6 +81,7 @@ function ShopContents() {
         itemTag.src = item;
         cartDisplay.appendChild(itemTag);
     })
+    sumTotal();
   }
 
   function displayOrangeCart() {
@@ -90,13 +100,14 @@ function ShopContents() {
     let img = Orange;
     setToggleHeader(prev => prev = 1);
     setCartOrangeItems(prev => prev.concat(img));
-    cartOrangeItems.forEach(item => {
+    cartOrangeItems.forEach(item => {     // you need to allow user to select amount
         const itemTag = document.createElement('img');
         itemTag.classList.add('orangeImg');
         itemTag.id = 'cartImg';
         itemTag.src = item;
         cartDisplay.appendChild(itemTag);
     })
+    sumTotal();
   }
 
 
@@ -105,6 +116,7 @@ function ShopContents() {
         <div>
             <div className='cart'>
                 <h3>Cart</h3>
+                <div className='counter'></div>
             </div>
             <div className='header'>
                 <h3>Catalog</h3>
