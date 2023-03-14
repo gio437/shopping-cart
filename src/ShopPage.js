@@ -14,11 +14,13 @@ function ShopContents() {
   let [cartMelonItems, setCartMelonItems] = useState([]);
   let [cartAppleItems, setCartAppleItems] = useState([]);
   let [cartOrangeItems, setCartOrangeItems] = useState([]);
+  let [cartDragonItems, setCartDragonItems] = useState([]);
+  let [cartPearItems, setCartPearItems] = useState([]);
+  let [cartPineappleItems, setCartPineappleItems] = useState([]);
   let [totalCartItems, setTotalCartItems] = useState(0);
 
-
   function sumTotal() {
-    setTotalCartItems(prev => prev = cartMelonItems.length + cartAppleItems.length + cartOrangeItems.length);
+    setTotalCartItems(prev => prev = cartMelonItems.length + cartAppleItems.length + cartOrangeItems.length + cartDragonItems.length + cartPearItems.length + cartPineappleItems.length);
   }
 
   useEffect(() => {
@@ -39,12 +41,12 @@ function ShopContents() {
         itemTag.id = 'cartImg';
         itemTag.src = Watermelon;
         cartDisplay.appendChild(itemTag);
-      sumTotal();
+        sumTotal();
 
       const amount = document.createElement('div');
       amount.textContent = cartMelonItems.length; // displays amount of each item
       amount.classList.add('itemAmount');
-      itemTag.append(amount);
+      cartDisplay.append(amount);
   }, [cartMelonItems]);
 
   useEffect(() => {
@@ -88,6 +90,71 @@ function ShopContents() {
 
   }, [cartOrangeItems]);
 
+  useEffect(() => {
+    const existingImages = document.querySelectorAll('.dragonImg');
+    existingImages.forEach(dragonDiv => {
+      dragonDiv.remove();
+    })
+
+    const cartDisplay = document.querySelector('.cart');
+      const itemTag = document.createElement('img');
+      itemTag.classList.add('dragonImg');
+      itemTag.id = 'cartImg';
+      itemTag.src = DragonFruit;
+      cartDisplay.appendChild(itemTag);
+      sumTotal();
+
+      const amount = document.createElement('div');
+      amount.textContent = cartDragonItems.length; // displays amount of each item
+      amount.classList.add('itemAmount');
+      itemTag.append(amount);
+
+  }, [cartDragonItems]);
+
+  useEffect(() => {
+    const existingImages = document.querySelectorAll('.pearImg');
+    existingImages.forEach(pearDiv => {
+      pearDiv.remove();
+    })
+
+    const cartDisplay = document.querySelector('.cart');
+      const itemTag = document.createElement('img');
+      itemTag.classList.add('dragonImg');
+      itemTag.id = 'cartImg';
+      itemTag.src = Pear;
+      cartDisplay.appendChild(itemTag);
+      sumTotal();
+
+      const amount = document.createElement('div');
+      amount.textContent = cartPearItems.length; // displays amount of each item
+      amount.classList.add('itemAmount');
+      itemTag.append(amount);
+
+  }, [cartPearItems]);
+
+  useEffect(() => {
+    const existingImages = document.querySelectorAll('.pineappleImg');
+    existingImages.forEach(pineappleDiv => {
+      pineappleDiv.remove();
+    })
+
+    const cartDisplay = document.querySelector('.cart');
+      const itemTag = document.createElement('img');
+      itemTag.classList.add('dragonImg');
+      itemTag.id = 'cartImg';
+      itemTag.src = Pineapple;
+      cartDisplay.appendChild(itemTag);
+      sumTotal();
+
+      const amount = document.createElement('div');
+      amount.textContent = cartPineappleItems.length; // displays amount of each item
+      amount.classList.add('itemAmount');
+      itemTag.append(amount);
+
+  }, [cartPineappleItems]);
+
+
+
   function ShowCart() {
     const cartDisplay = document.querySelector('.cart');
     const checkoutBtn = document.querySelector('.checkout');
@@ -110,8 +177,10 @@ function ShopContents() {
     })
 
     const cartDisplay = document.querySelector('.cart');
+    const checkoutBtn = document.querySelector('.checkout');
     const melonBoxVal = document.querySelector('.melonBox').value;
     cartDisplay.style.display = 'flex';
+    checkoutBtn.style.display = 'flex';
     let img = Watermelon;
     setToggleHeader(prev => prev = 1);
     console.log(melonBoxVal);
@@ -129,9 +198,8 @@ function ShopContents() {
       AppleDiv.remove();
     })
 
-    const cartDisplay = document.querySelector('.cart');
+
     const appleBoxVal = document.querySelector('.appleBox').value;
-    cartDisplay.style.display = 'flex';
     let img = Apple;
     setToggleHeader(prev => prev = 1);
     if (appleBoxVal > 0 && appleBoxVal <= 10) { // just put a number next to img, maybe inline onto the pic?
@@ -148,14 +216,64 @@ function ShopContents() {
       OrangeDiv.remove();
     })
 
-    const cartDisplay = document.querySelector('.cart');
+
     let orangeBoxVal = document.querySelector('.orangeBox').value;
-    cartDisplay.style.display = 'flex';
     let img = Orange;
     setToggleHeader(prev => prev = 1);
     if (orangeBoxVal > 0 && orangeBoxVal <= 10) {
       for (let i = 0; i < orangeBoxVal; i++) {
         setCartOrangeItems(prev => prev.concat(img));
+      }
+    }
+    displayDragonCart();
+  }
+
+  function displayDragonCart() {
+    const existingImages = document.querySelectorAll('.dragonImg');
+    existingImages.forEach(dragonDiv => {
+      dragonDiv.remove();
+    })
+
+    let boxVal = document.querySelector('.dragonBox').value;
+    let img = DragonFruit;
+    setToggleHeader(prev => prev = 1);
+    if (boxVal > 0 && boxVal <= 10) {
+      for (let i = 0; i < boxVal; i++) {
+        setCartDragonItems(prev => prev.concat(img));
+      }
+    }
+    displayPearCart();
+  }
+
+  function displayPearCart() {
+    const existingImages = document.querySelectorAll('.pearImg');
+    existingImages.forEach(dragonDiv => {
+      dragonDiv.remove();
+    })
+
+    let boxVal = document.querySelector('.pearBox').value;
+    let img = Pear;
+    setToggleHeader(prev => prev = 1);
+    if (boxVal > 0 && boxVal <= 10) {
+      for (let i = 0; i < boxVal; i++) {
+        setCartPearItems(prev => prev.concat(img));
+      }
+    }
+    displayPineappleCart();
+  }
+
+  function displayPineappleCart() {
+    const existingImages = document.querySelectorAll('.pineappleImg');
+    existingImages.forEach(pineappleDiv => {
+      pineappleDiv.remove();
+    })
+
+    let boxVal = document.querySelector('.pineappleBox').value;
+    let img = Pineapple;
+    setToggleHeader(prev => prev = 1);
+    if (boxVal > 0 && boxVal <= 10) {
+      for (let i = 0; i < boxVal; i++) {
+        setCartPineappleItems(prev => prev.concat(img));
       }
     }
   }
@@ -169,7 +287,7 @@ function ShopContents() {
             </div>
             <div className='checkout'>
                 <h3 className='counter'></h3>
-                <button className='checkoutBtn'>Checkout</button>
+                <button onClick={ShowCart} className='checkoutBtn'>Checkout</button>
             </div>
             <div className='header'>
                 <h3 style={{color: 'black'}}>Catalog</h3>
@@ -216,7 +334,7 @@ function ShopContents() {
             </div>
             <div className='addCartContain'>
                   <button onClick={displayMelonCart} className='addCart'>Add To Cart</button>
-                </div>
+            </div>
         </div>
     )
 }
