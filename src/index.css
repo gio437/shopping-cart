@@ -81,6 +81,20 @@ code {
   margin: 1rem;
 }
 
+label {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
+input {
+  width: 8rem;
+  margin-left: 3rem;
+}
+
 .cartBtn {
   cursor: pointer;
 }
@@ -101,10 +115,4 @@ code {
   width: 15rem;
   height: 15rem;
   cursor: pointer;
-}
-
-.fruitDescription {
-  text-align: center;
-  color: white;
-  font-size: 2rem;
 }

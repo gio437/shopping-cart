@@ -79,10 +79,16 @@ function ShopContents() {
     })
 
     const cartDisplay = document.querySelector('.cart');
+    const melonBoxVal = document.querySelector('.melonBox').value;
     cartDisplay.style.display = 'flex';
     let img = Watermelon;
     setToggleHeader(prev => prev = 1);
-    setCartMelonItems(prev => prev.concat(img));
+    console.log(melonBoxVal);
+    if (melonBoxVal > 0) {
+        for (let i = 0; i < melonBoxVal; i++) {
+          setCartMelonItems(prev => prev.concat(img));
+      }
+    }
   }
 
   function displayAppleCart() {
@@ -92,10 +98,15 @@ function ShopContents() {
     })
 
     const cartDisplay = document.querySelector('.cart');
+    const appleBoxVal = document.querySelector('.appleBox').value;
     cartDisplay.style.display = 'flex';
     let img = Apple;
     setToggleHeader(prev => prev = 1);
-    setCartAppleItems(prev => prev.concat(img));
+    if (appleBoxVal > 0) {
+      for (let i = 0; i < appleBoxVal; i++) {
+        setCartAppleItems(prev => prev.concat(img));
+      }
+    }
   }
 
   function displayOrangeCart() {
@@ -105,10 +116,15 @@ function ShopContents() {
     })
 
     const cartDisplay = document.querySelector('.cart');
+    const orangeBoxVal = document.querySelector('.orangeBox').value;
     cartDisplay.style.display = 'flex';
     let img = Orange;
     setToggleHeader(prev => prev = 1);
-    setCartOrangeItems(prev => prev.concat(img));
+    if (orangeBoxVal > 0) {
+      for (let i = 0; i < orangeBoxVal; i++) {
+        setCartOrangeItems(prev => prev.concat(img));
+      }
+    }
   }
 
 
@@ -127,15 +143,21 @@ function ShopContents() {
             <div className='cardContain'>
                 <div className='card'>
                     <img onClick={displayMelonCart} className='fruitPics'src={Watermelon} alt=''></img>
-                    <div className='fruitDescription'>Watermelon</div>
+                    <label htmlFor='numberBox'>Number of Watermelons
+                      <input className='melonBox' type='number'></input>
+                    </label>
                 </div>
                 <div className='card'>
                     <img onClick={displayAppleCart} className='fruitPics' src={Apple} alt=''></img>
-                    <div className='fruitDescription'>Apple</div>
+                    <label htmlFor='numberBox'>Number of Apples
+                      <input className='appleBox' type='number'></input>
+                    </label>
                 </div>
                 <div className='card'>
                     <img onClick={displayOrangeCart} className='fruitPics' src={Orange} alt=''></img>
-                    <div className='fruitDescription'>Orange</div>
+                    <label htmlFor='numberBox'>Number of Oranges
+                      <input className='orangeBox' type='number'></input>
+                    </label>
                 </div>
             </div>
         </div>
