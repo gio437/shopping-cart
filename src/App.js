@@ -30,7 +30,7 @@ export default function App() {
 
       </div>
       <div className='header'>
-        <h3>Home</h3>
+        <h3 style={{color: 'black'}}>Home</h3>
         <Link className='homeShop' to='/shop'> <h3>Shop</h3></Link>
         <h3 className='cartBtn' onClick={ShowCart}>Cart</h3>
       </div>

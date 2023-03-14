@@ -72,7 +72,7 @@ code {
 }
 
 .addCart {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -80,6 +80,12 @@ code {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  cursor: pointer;
+}
+
+.itemAmount {
+  position: absolute;
+  margin-left: 5rem;
 }
 
 
@@ -121,6 +127,9 @@ input {
   display: grid;
   justify-content: space-around;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 10rem;
+  margin-top: 3rem;
+  margin-left: 27rem;
 }
 
 .card {
@@ -132,5 +141,23 @@ input {
 .fruitPics {
   width: 15rem;
   height: 15rem;
+  cursor: pointer;
+}
+
+.checkout {
+  display: flex;
+  justify-content: end;
+  display: none;
+  gap: 2rem;
+}
+
+.checkoutBtn {
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
   cursor: pointer;
 }
