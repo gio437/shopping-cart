@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import Watermelon from './images/watermelon.png';
 import Apple from './images/apple.png';
 import Orange from './images/orange.png';
 import { useState, useEffect } from 'react';
 import App from './App';
 
+// fix url switching setState saving
 function ShopContents() {
   let [toggleHeader, setToggleHeader] = useState(0);
   let [cartMelonItems, setCartMelonItems] = useState([]);
@@ -89,6 +90,7 @@ function ShopContents() {
           setCartMelonItems(prev => prev.concat(img));
       }
     }
+    displayAppleCart();
   }
 
   function displayAppleCart() {
@@ -107,6 +109,7 @@ function ShopContents() {
         setCartAppleItems(prev => prev.concat(img));
       }
     }
+    displayOrangeCart();
   }
 
   function displayOrangeCart() {
@@ -142,24 +145,27 @@ function ShopContents() {
             </div>
             <div className='cardContain'>
                 <div className='card'>
-                    <img onClick={displayMelonCart} className='fruitPics'src={Watermelon} alt=''></img>
+                    <img className='fruitPics'src={Watermelon} alt=''></img>
                     <label htmlFor='numberBox'>Number of Watermelons
                       <input className='melonBox' type='number'></input>
                     </label>
                 </div>
                 <div className='card'>
-                    <img onClick={displayAppleCart} className='fruitPics' src={Apple} alt=''></img>
+                    <img className='fruitPics' src={Apple} alt=''></img>
                     <label htmlFor='numberBox'>Number of Apples
                       <input className='appleBox' type='number'></input>
                     </label>
                 </div>
                 <div className='card'>
-                    <img onClick={displayOrangeCart} className='fruitPics' src={Orange} alt=''></img>
+                    <img className='fruitPics' src={Orange} alt=''></img>
                     <label htmlFor='numberBox'>Number of Oranges
                       <input className='orangeBox' type='number'></input>
                     </label>
                 </div>
             </div>
+            <div class='addCartContain'>
+                  <button onClick={displayMelonCart} className='addCart'>Add To Cart</button>
+                </div>
         </div>
     )
 }
