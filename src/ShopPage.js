@@ -188,7 +188,7 @@ function ShopContents() {
     let img = Watermelon;
     setToggleHeader(prev => prev = 1);
     console.log(melonBoxVal);
-    if (melonBoxVal > 0 && melonBoxVal <= 10) {
+    if (melonBoxVal <= 10000) {
         for (let i = 0; i < melonBoxVal; i++) {
           setCartMelonItems(prev => prev.concat(img));
       }
@@ -210,7 +210,7 @@ function ShopContents() {
     const appleBoxVal = document.querySelector('.appleBox').value;
     let img = Apple;
     setToggleHeader(prev => prev = 1);
-    if (appleBoxVal > 0 && appleBoxVal <= 10) { // just put a number next to img, maybe inline onto the pic?
+    if (appleBoxVal <= 10000) { // just put a number next to img, maybe inline onto the pic?
       for (let i = 0; i < appleBoxVal; i++) {
         setCartAppleItems(prev => prev.concat(img));
       }
@@ -232,7 +232,7 @@ function ShopContents() {
     let orangeBoxVal = document.querySelector('.orangeBox').value;
     let img = Orange;
     setToggleHeader(prev => prev = 1);
-    if (orangeBoxVal > 0 && orangeBoxVal <= 10) {
+    if (orangeBoxVal <= 10000) {
       for (let i = 0; i < orangeBoxVal; i++) {
         setCartOrangeItems(prev => prev.concat(img));
       }
@@ -254,7 +254,7 @@ function ShopContents() {
     let boxVal = document.querySelector('.dragonBox').value;
     let img = DragonFruit;
     setToggleHeader(prev => prev = 1);
-    if (boxVal > 0 && boxVal <= 10) {
+    if (boxVal <= 10000) {
       for (let i = 0; i < boxVal; i++) {
         setCartDragonItems(prev => prev.concat(img));
       }
@@ -276,7 +276,7 @@ function ShopContents() {
     let boxVal = document.querySelector('.pearBox').value;
     let img = Pear;
     setToggleHeader(prev => prev = 1);
-    if (boxVal > 0 && boxVal <= 10) {
+    if (boxVal <= 10000) {
       for (let i = 0; i < boxVal; i++) {
         setCartPearItems(prev => prev.concat(img));
       }
@@ -298,7 +298,7 @@ function ShopContents() {
     let boxVal = document.querySelector('.pineappleBox').value;
     let img = Pineapple;
     setToggleHeader(prev => prev = 1);
-    if (boxVal > 0 && boxVal <= 10) {
+    if (boxVal <= 10000) {
       for (let i = 0; i < boxVal; i++) {
         setCartPineappleItems(prev => prev.concat(img));
       }
@@ -317,9 +317,8 @@ function ShopContents() {
                 <button onClick={ShowCart} className='checkoutBtn'>Checkout</button>
             </div>
             <div className='header'>
+            <Link to='/shopping-cart' className='BackHome'><h3>Home</h3></Link>
                 <h3 style={{color: 'black'}}>Catalog</h3>
-                <Link to='/shopping-cart' className='BackHome'><h3>Home</h3></Link>
-                <h3 className='cartBtn' onClick={ShowCart}>Cart</h3>
             </div>
             <div className='cardContain'>
                 <div className='card'>

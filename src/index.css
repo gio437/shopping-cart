@@ -68,8 +68,7 @@ code {
 .addCartContain {
   display: flex;
   justify-content: center;
-  margin-top: 55rem;
-  margin-left: 5rem;
+  margin-top: 46rem;
 }
 
 .addCart {
@@ -161,7 +160,8 @@ input {
 }
 
 .cardContain {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
   width: 100%;
