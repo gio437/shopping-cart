@@ -9,6 +9,7 @@ Features
 The application calculates the total number of the items in the shopping cart
 Users can checkout and complete their purchase
 The application uses useState to save the user's cart between sessions
+The input amount is limited to 10k.
 
 
 Technologies Used
