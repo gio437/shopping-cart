@@ -87,7 +87,49 @@ code {
 .itemAmount {
   font-weight: bold;
   font-size: 2rem;
-  position: relative;
+  position: absolute;
+  margin-left: 4rem;
+  margin-top: 1rem;
+}
+
+.itemAppleAmount {
+  font-weight: bold;
+  font-size: 2rem;
+  position: absolute;
+  margin-left: 9.5rem;
+  margin-top: 1rem;
+}
+
+.itemOrangeAmount {
+  font-weight: bold;
+  font-size: 2rem;
+  position: absolute;
+  margin-left: 14rem;
+  margin-top: 1rem;
+}
+
+.itemDragonAmount {
+  font-weight: bold;
+  font-size: 2rem;
+  position: absolute;
+  margin-left: 19rem;
+  margin-top: 1rem;
+}
+
+.itemPearAmount {
+  font-weight: bold;
+  font-size: 2rem;
+  position: absolute;
+  margin-left: 24rem;
+  margin-top: 1rem;
+}
+
+.itemPineappleAmount {
+  font-weight: bold;
+  font-size: 2rem;
+  position: absolute;
+  margin-left: 29rem;
+  margin-top: 1rem;
 }
 
 .homeShop {

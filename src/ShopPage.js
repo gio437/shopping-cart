@@ -65,8 +65,8 @@ function ShopContents() {
       sumTotal();
       const amount = document.createElement('div');
       amount.textContent = cartAppleItems.length; // displays amount of each item
-      amount.classList.add('itemAmount');
-      itemTag.append(amount);
+      amount.classList.add('itemAppleAmount');
+      cartDisplay.append(amount);
   }, [cartAppleItems]);
 
   useEffect(() => {
@@ -85,8 +85,8 @@ function ShopContents() {
 
       const amount = document.createElement('div');
       amount.textContent = cartOrangeItems.length; // displays amount of each item
-      amount.classList.add('itemAmount');
-      itemTag.append(amount);
+      amount.classList.add('itemOrangeAmount');
+      cartDisplay.append(amount);
 
   }, [cartOrangeItems]);
 
@@ -106,8 +106,8 @@ function ShopContents() {
 
       const amount = document.createElement('div');
       amount.textContent = cartDragonItems.length; // displays amount of each item
-      amount.classList.add('itemAmount');
-      itemTag.append(amount);
+      amount.classList.add('itemDragonAmount');
+      cartDisplay.append(amount);
 
   }, [cartDragonItems]);
 
@@ -119,7 +119,7 @@ function ShopContents() {
 
     const cartDisplay = document.querySelector('.cart');
       const itemTag = document.createElement('img');
-      itemTag.classList.add('dragonImg');
+      itemTag.classList.add('pearImg');
       itemTag.id = 'cartImg';
       itemTag.src = Pear;
       cartDisplay.appendChild(itemTag);
@@ -127,8 +127,8 @@ function ShopContents() {
 
       const amount = document.createElement('div');
       amount.textContent = cartPearItems.length; // displays amount of each item
-      amount.classList.add('itemAmount');
-      itemTag.append(amount);
+      amount.classList.add('itemPearAmount');
+      cartDisplay.append(amount);
 
   }, [cartPearItems]);
 
@@ -140,7 +140,7 @@ function ShopContents() {
 
     const cartDisplay = document.querySelector('.cart');
       const itemTag = document.createElement('img');
-      itemTag.classList.add('dragonImg');
+      itemTag.classList.add('pineappleImg');
       itemTag.id = 'cartImg';
       itemTag.src = Pineapple;
       cartDisplay.appendChild(itemTag);
@@ -148,8 +148,8 @@ function ShopContents() {
 
       const amount = document.createElement('div');
       amount.textContent = cartPineappleItems.length; // displays amount of each item
-      amount.classList.add('itemAmount');
-      itemTag.append(amount);
+      amount.classList.add('itemPineappleAmount');
+      cartDisplay.append(amount);
 
   }, [cartPineappleItems]);
 
@@ -175,6 +175,10 @@ function ShopContents() {
     existingImages.forEach(melonDiv => {
       melonDiv.remove();
     })
+    const existingAmount = document.querySelectorAll('.itemAmount');
+      existingAmount.forEach(amount => {
+        amount.remove();
+      })
 
     const cartDisplay = document.querySelector('.cart');
     const checkoutBtn = document.querySelector('.checkout');
@@ -198,6 +202,10 @@ function ShopContents() {
       AppleDiv.remove();
     })
 
+    const existingAmount = document.querySelectorAll('.itemAppleAmount');
+    existingAmount.forEach(amount => {
+      amount.remove();
+    })
 
     const appleBoxVal = document.querySelector('.appleBox').value;
     let img = Apple;
@@ -216,6 +224,10 @@ function ShopContents() {
       OrangeDiv.remove();
     })
 
+    const existingAmount = document.querySelectorAll('.itemOrangeAmount');
+    existingAmount.forEach(amount => {
+      amount.remove();
+    })
 
     let orangeBoxVal = document.querySelector('.orangeBox').value;
     let img = Orange;
@@ -232,6 +244,11 @@ function ShopContents() {
     const existingImages = document.querySelectorAll('.dragonImg');
     existingImages.forEach(dragonDiv => {
       dragonDiv.remove();
+    })
+
+    const existingAmount = document.querySelectorAll('.itemDragonAmount');
+    existingAmount.forEach(amount => {
+      amount.remove();
     })
 
     let boxVal = document.querySelector('.dragonBox').value;
@@ -251,6 +268,11 @@ function ShopContents() {
       dragonDiv.remove();
     })
 
+    const existingAmount = document.querySelectorAll('.itemPearAmount');
+    existingAmount.forEach(amount => {
+      amount.remove();
+    })
+
     let boxVal = document.querySelector('.pearBox').value;
     let img = Pear;
     setToggleHeader(prev => prev = 1);
@@ -266,6 +288,11 @@ function ShopContents() {
     const existingImages = document.querySelectorAll('.pineappleImg');
     existingImages.forEach(pineappleDiv => {
       pineappleDiv.remove();
+    })
+
+    const existingAmount = document.querySelectorAll('.itemPineappleAmount');
+    existingAmount.forEach(amount => {
+      amount.remove();
     })
 
     let boxVal = document.querySelector('.pineappleBox').value;
