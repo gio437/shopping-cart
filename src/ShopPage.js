@@ -174,11 +174,11 @@ function ShopContents() {
     const existingImages = document.querySelectorAll('.melonImg');
     existingImages.forEach(melonDiv => {
       melonDiv.remove();
-    })
+    });
     const existingAmount = document.querySelectorAll('.itemAmount');
       existingAmount.forEach(amount => {
-        amount.remove();
-      })
+      amount.remove();
+    });
 
     const cartDisplay = document.querySelector('.cart');
     const checkoutBtn = document.querySelector('.checkout');
@@ -324,37 +324,55 @@ function ShopContents() {
                 <div className='card'>
                     <img className='fruitPics'src={Watermelon} alt=''></img>
                     <label htmlFor='numberBox'>Number of Watermelons
-                      <input className='melonBox' type='number' min='1' max='10'></input>
+                      <input className='melonBox' type='number' min='1' max='10' onKeyPress={(event) => {
+        if (!/[1-9]/.test(event.key)) {
+          event.preventDefault();
+        }}}></input>
                     </label>
                 </div>
                 <div className='card'>
                     <img className='fruitPics' src={Apple} alt=''></img>
                     <label htmlFor='numberBox'>Number of Apples
-                      <input className='appleBox' type='number' min='1' max='10'></input>
+                      <input className='appleBox' type='number' min='1' max='10' onKeyPress={(event) => {
+        if (!/[1-9]/.test(event.key)) {
+          event.preventDefault();
+        }}}></input>
                     </label>
                 </div>
                 <div className='card'>
                     <img className='fruitPics' src={Orange} alt=''></img>
                     <label htmlFor='numberBox'>Number of Oranges
-                      <input className='orangeBox' type='number' min='1' max='10'></input>
+                      <input className='orangeBox' type='number' min='1' max='10' onKeyPress={(event) => {
+        if (!/[1-9]/.test(event.key)) {
+          event.preventDefault();
+        }}}></input>
                     </label>
                 </div>
                 <div className='card'>
                     <img className='fruitPics' src={DragonFruit} alt=''></img>
                     <label htmlFor='numberBox'>Number of Dragonfruits
-                      <input className='dragonBox' type='number' min='1' max='10'></input>
+                      <input className='dragonBox' type='number' min='1' max='10' onKeyPress={(event) => {
+        if (!/[1-9]/.test(event.key)) {
+          event.preventDefault();
+        }}}></input>
                     </label>
                 </div>
                 <div className='card'>
                     <img className='fruitPics' src={Pear} alt=''></img>
                     <label htmlFor='numberBox'>Number of Pears
-                      <input className='pearBox' type='number' min='1' max='10'></input>
+                      <input className='pearBox' type='number' min='1' max='10' onKeyPress={(event) => {
+        if (!/[1-9]/.test(event.key)) {
+          event.preventDefault();
+        }}}></input>
                     </label>
                 </div>
                 <div className='card'>
                     <img className='fruitPics' src={Pineapple} alt=''></img>
                     <label htmlFor='numberBox'>Number of Pineapples
-                      <input className='pineappleBox' type='number' min='1' max='10'></input>
+                      <input className='pineappleBox' type='number' min='1' max='10' onKeyPress={(event) => {
+        if (!/[1-9]/.test(event.key)) {
+          event.preventDefault();
+        }}}></input>
                     </label>
                 </div>
             </div>
