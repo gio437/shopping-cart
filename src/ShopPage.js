@@ -47,7 +47,7 @@ function ShopContents() {
       amount.textContent = cartMelonItems.length; // displays amount of each item
       amount.classList.add('itemAmount');
       cartDisplay.append(amount);
-  }, [cartMelonItems]);
+  }, [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems]);
 
   useEffect(() => {
     const existingImages = document.querySelectorAll('.appleImg');
@@ -67,7 +67,7 @@ function ShopContents() {
       amount.textContent = cartAppleItems.length; // displays amount of each item
       amount.classList.add('itemAppleAmount');
       cartDisplay.append(amount);
-  }, [cartAppleItems]);
+  }, [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems]);
 
   useEffect(() => {
     const existingImages = document.querySelectorAll('.orangeImg');
@@ -88,7 +88,7 @@ function ShopContents() {
       amount.classList.add('itemOrangeAmount');
       cartDisplay.append(amount);
 
-  }, [cartOrangeItems]);
+  }, [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems]);
 
   useEffect(() => {
     const existingImages = document.querySelectorAll('.dragonImg');
@@ -109,7 +109,7 @@ function ShopContents() {
       amount.classList.add('itemDragonAmount');
       cartDisplay.append(amount);
 
-  }, [cartDragonItems]);
+  }, [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems]);
 
   useEffect(() => {
     const existingImages = document.querySelectorAll('.pearImg');
@@ -130,7 +130,7 @@ function ShopContents() {
       amount.classList.add('itemPearAmount');
       cartDisplay.append(amount);
 
-  }, [cartPearItems]);
+  }, [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems]);
 
   useEffect(() => {
     const existingImages = document.querySelectorAll('.pineappleImg');
@@ -151,9 +151,7 @@ function ShopContents() {
       amount.classList.add('itemPineappleAmount');
       cartDisplay.append(amount);
 
-  }, [cartPineappleItems]);
-
-
+  }, [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems]);
 
   function ShowCart() {
     const cartDisplay = document.querySelector('.cart');
