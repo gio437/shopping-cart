@@ -375,9 +375,10 @@ function ShopContents() {
         }}}></input>
                     </label>
                 </div>
-            </div>
-            <div className='addCartContain'>
+                <div></div>
+                <div className='addCartContain'>
                   <button onClick={displayMelonCart} className='addCart'>Add To Cart</button>
+                </div>
             </div>
         </div>
     )
