@@ -1,9 +1,8 @@
-import React from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Watermelon from './images/watermelon.png';
 import Apple from './images/apple.png';
 import Orange from './images/orange.png';
-import { useState, useEffect } from 'react';
 import DragonFruit from './images/dragonfruit.png';
 import Pear from './images/pear.png';
 import Pineapple from './images/pineapple.png';
@@ -47,6 +46,7 @@ function ShopContents() {
       amount.textContent = cartMelonItems.length; // displays amount of each item
       amount.classList.add('itemAmount');
       cartDisplay.append(amount);
+      ClearableInput();
   }, [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems]);
 
   useEffect(() => {
@@ -303,6 +303,20 @@ function ShopContents() {
     }
   }
 
+  const inputRef = useRef();
+  const inputAppleRef = useRef();
+  const inputOrangeRef = useRef();
+  const inputDragonRef = useRef();
+  const inputPearsRef = useRef();
+  const inputPineappleRef = useRef();
+  const ClearableInput = () => {
+      inputRef.current.value = '';
+      inputAppleRef.current.value = '';
+      inputOrangeRef.current.value = '';
+      inputDragonRef.current.value = '';
+      inputPearsRef.current.value = '';
+      inputPineappleRef.current.value = '';
+  }
 
   // set props for home page with cart contents to be sent over when cart is display block on home page
     return (
@@ -322,7 +336,7 @@ function ShopContents() {
                 <div className='card'>
                     <img className='fruitPics'src={Watermelon} alt=''></img>
                     <label htmlFor='numberBox'>Number of Watermelons
-                      <input className='melonBox' type='number' min='1' max='10' onKeyPress={(event) => {
+                      <input className='melonBox' type='number' min='1' max='10' ref={inputRef} onKeyPress={(event) => {
         if (!/[1-9]/.test(event.key)) {
           event.preventDefault();
         }}}></input>
@@ -331,7 +345,7 @@ function ShopContents() {
                 <div className='card'>
                     <img className='fruitPics' src={Apple} alt=''></img>
                     <label htmlFor='numberBox'>Number of Apples
-                      <input className='appleBox' type='number' min='1' max='10' onKeyPress={(event) => {
+                      <input className='appleBox' type='number' min='1' max='10' ref={inputAppleRef} onKeyPress={(event) => {
         if (!/[1-9]/.test(event.key)) {
           event.preventDefault();
         }}}></input>
@@ -340,7 +354,7 @@ function ShopContents() {
                 <div className='card'>
                     <img className='fruitPics' src={Orange} alt=''></img>
                     <label htmlFor='numberBox'>Number of Oranges
-                      <input className='orangeBox' type='number' min='1' max='10' onKeyPress={(event) => {
+                      <input className='orangeBox' type='number' min='1' max='10' ref={inputOrangeRef} onKeyPress={(event) => {
         if (!/[1-9]/.test(event.key)) {
           event.preventDefault();
         }}}></input>
@@ -349,7 +363,7 @@ function ShopContents() {
                 <div className='card'>
                     <img className='fruitPics' src={DragonFruit} alt=''></img>
                     <label htmlFor='numberBox'>Number of Dragonfruits
-                      <input className='dragonBox' type='number' min='1' max='10' onKeyPress={(event) => {
+                      <input className='dragonBox' type='number' min='1' max='10' ref={inputDragonRef} onKeyPress={(event) => {
         if (!/[1-9]/.test(event.key)) {
           event.preventDefault();
         }}}></input>
@@ -358,7 +372,7 @@ function ShopContents() {
                 <div className='card'>
                     <img className='fruitPics' src={Pear} alt=''></img>
                     <label htmlFor='numberBox'>Number of Pears
-                      <input className='pearBox' type='number' min='1' max='10' onKeyPress={(event) => {
+                      <input className='pearBox' type='number' min='1' max='10' ref={inputPearsRef} onKeyPress={(event) => {
         if (!/[1-9]/.test(event.key)) {
           event.preventDefault();
         }}}></input>
@@ -367,7 +381,7 @@ function ShopContents() {
                 <div className='card'>
                     <img className='fruitPics' src={Pineapple} alt=''></img>
                     <label htmlFor='numberBox'>Number of Pineapples
-                      <input className='pineappleBox' type='number' min='1' max='10' onKeyPress={(event) => {
+                      <input className='pineappleBox' type='number' min='1' max='10' ref={inputPineappleRef} onKeyPress={(event) => {
         if (!/[1-9]/.test(event.key)) {
           event.preventDefault();
         }}}></input>
