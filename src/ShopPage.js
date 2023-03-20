@@ -303,6 +303,15 @@ function ShopPage() {
     }
   }
 
+  function ClearCart() {
+    setCartMelonItems(prev => prev = []);
+    setCartAppleItems(prev => prev = []);
+    setCartOrangeItems(prev => prev = []);
+    setCartDragonItems(prev => prev = []);
+    setCartPearItems(prev => prev = []);
+    ShowCart();
+  }
+
   const inputRef = useRef();
   const inputAppleRef = useRef();
   const inputOrangeRef = useRef();
@@ -326,7 +335,7 @@ function ShopPage() {
             </div>
             <div className='checkout'>
                 <h3 className='counter'></h3>
-                <button onClick={ShowCart} className='checkoutBtn'>Checkout</button>
+                <button onClick={ClearCart} className='checkoutBtn'>Checkout</button>
             </div>
             <div className='header'>
             <Link to='/shopping-cart' className='BackHome'><h3>Home</h3></Link>
