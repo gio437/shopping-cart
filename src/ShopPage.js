@@ -8,7 +8,7 @@ import Pear from './images/pear.png';
 import Pineapple from './images/pineapple.png';
 
 // fix url switching setState saving
-function ShopContents() {
+function ShopPage() {
   let [toggleHeader, setToggleHeader] = useState(0);
   let [cartMelonItems, setCartMelonItems] = useState([]);
   let [cartAppleItems, setCartAppleItems] = useState([]);
@@ -396,4 +396,4 @@ function ShopContents() {
     )
 }
 
-export default ShopContents;
+export default ShopPage;
