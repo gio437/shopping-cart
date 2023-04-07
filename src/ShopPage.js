@@ -325,9 +325,11 @@ function ShopPage() {
     setCartOrangeItems(prev => prev = []);
     setCartDragonItems(prev => prev = []);
     setCartPearItems(prev => prev = []);
+    setCartPineappleItems(prev => prev = []);
     ShowCart();
   }
 
+  // will clear textboxes after submission =>
   const inputRef = useRef();
   const inputAppleRef = useRef();
   const inputOrangeRef = useRef();
@@ -351,7 +353,7 @@ function ShopPage() {
             </div>
             <div className='checkout'>
                 <h3 className='counter'></h3>
-                <button onClick={ClearCart} className='checkoutBtn'>Checkout</button>
+                <button onClick={ClearCart} className='checkoutBtn'>Checkout (Clears Cart)</button>
             </div>
             <div className='header'>
             <Link to='/shopping-cart' className='BackHome'><h3>Home</h3></Link>
