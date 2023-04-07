@@ -16,7 +16,7 @@ export default function App() {
       <div className='info'>
         <img className='shelf' alt='' src={Shelf}></img>
         <div className='slogan'>Check out this wide assortment of fruits!</div>
-        <Link to='/shop' className='shopBtn'>SHOP</Link>
+        <Link to='/shop' className='shopBtn'>Catalog</Link>
       </div>
     </div>
   );
