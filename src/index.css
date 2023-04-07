@@ -19,7 +19,6 @@ code {
   justify-content: space-around;
 }
 
-
 .info {
   display: flex;
   justify-content: center;
@@ -67,7 +66,8 @@ code {
 }
 
 .addCartContain {
-  margin-left: 2.5rem;
+  margin-left: 2.7rem;
+  margin-top: 5rem;
 }
 
 .addCart {
@@ -158,18 +158,17 @@ input {
   cursor: pointer;
 }
 
+.cardContainerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
 .cardContain {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 60%;
-  position: absolute;
   gap: 10rem;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin-left: 3rem;
 }
 
 .card {
@@ -181,7 +180,6 @@ input {
 .fruitPics {
   width: 15rem;
   height: 15rem;
-  cursor: pointer;
 }
 
 .checkout {

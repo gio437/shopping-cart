@@ -359,64 +359,65 @@ function ShopPage() {
             <Link to='/shopping-cart' className='BackHome'><h3>Home</h3></Link>
                 <h3 style={{color: 'black'}}>Catalog</h3>
             </div>
-            <div className='cardContain'>
-                <div className='card'>
-                    <img className='fruitPics'src={Watermelon} alt=''></img>
-                    <label htmlFor='numberBox'>Number of Watermelons
-                      <input className='melonBox' type='number' min='1' max='10' ref={inputRef} onKeyPress={(event) => {
-        if (!/[1-9]/.test(event.key)) {
-          event.preventDefault();
-        }}}></input>
-                    </label>
-                </div>
-                <div className='card'>
-                    <img className='fruitPics' src={Apple} alt=''></img>
-                    <label htmlFor='numberBox'>Number of Apples
-                      <input className='appleBox' type='number' min='1' max='10' ref={inputAppleRef} onKeyPress={(event) => {
-        if (!/[1-9]/.test(event.key)) {
-          event.preventDefault();
-        }}}></input>
-                    </label>
-                </div>
-                <div className='card'>
-                    <img className='fruitPics' src={Orange} alt=''></img>
-                    <label htmlFor='numberBox'>Number of Oranges
-                      <input className='orangeBox' type='number' min='1' max='10' ref={inputOrangeRef} onKeyPress={(event) => {
-        if (!/[1-9]/.test(event.key)) {
-          event.preventDefault();
-        }}}></input>
-                    </label>
-                </div>
-                <div className='card'>
-                    <img className='fruitPics' src={DragonFruit} alt=''></img>
-                    <label htmlFor='numberBox'>Number of Dragonfruits
-                      <input className='dragonBox' type='number' min='1' max='10' ref={inputDragonRef} onKeyPress={(event) => {
-        if (!/[1-9]/.test(event.key)) {
-          event.preventDefault();
-        }}}></input>
-                    </label>
-                </div>
-                <div className='card'>
-                    <img className='fruitPics' src={Pear} alt=''></img>
-                    <label htmlFor='numberBox'>Number of Pears
-                      <input className='pearBox' type='number' min='1' max='10' ref={inputPearsRef} onKeyPress={(event) => {
-        if (!/[1-9]/.test(event.key)) {
-          event.preventDefault();
-        }}}></input>
-                    </label>
-                </div>
-                <div className='card'>
-                    <img className='fruitPics' src={Pineapple} alt=''></img>
-                    <label htmlFor='numberBox'>Number of Pineapples
-                      <input className='pineappleBox' type='number' min='1' max='10' ref={inputPineappleRef} onKeyPress={(event) => {
-        if (!/[1-9]/.test(event.key)) {
-          event.preventDefault();
-        }}}></input>
-                    </label>
-                </div>
-                <div></div>
-                <div className='addCartContain'>
-                  <button onClick={displayMelonCart} className='addCart'>Add To Cart</button>
+            <div className="cardContainerWrapper">
+              <div className='cardContain'>
+                  <div className='card'>
+                      <img className='fruitPics'src={Watermelon} alt=''></img>
+                      <label htmlFor='numberBox'>Number of Watermelons
+                        <input className='melonBox' type='number' min='1' max='10' ref={inputRef} onKeyPress={(event) => {
+          if (!/[1-9]/.test(event.key)) {
+            event.preventDefault();
+          }}}></input>
+                      </label>
+                  </div>
+                  <div className='card'>
+                      <img className='fruitPics' src={Apple} alt=''></img>
+                      <label htmlFor='numberBox'>Number of Apples
+                        <input className='appleBox' type='number' min='1' max='10' ref={inputAppleRef} onKeyPress={(event) => {
+          if (!/[1-9]/.test(event.key)) {
+            event.preventDefault();
+          }}}></input>
+                      </label>
+                  </div>
+                  <div className='card'>
+                      <img className='fruitPics' src={Orange} alt=''></img>
+                      <label htmlFor='numberBox'>Number of Oranges
+                        <input className='orangeBox' type='number' min='1' max='10' ref={inputOrangeRef} onKeyPress={(event) => {
+          if (!/[1-9]/.test(event.key)) {
+            event.preventDefault();
+          }}}></input>
+                      </label>
+                  </div>
+                  <div className='card'>
+                      <img className='fruitPics' src={DragonFruit} alt=''></img>
+                      <label htmlFor='numberBox'>Number of Dragonfruits
+                        <input className='dragonBox' type='number' min='1' max='10' ref={inputDragonRef} onKeyPress={(event) => {
+          if (!/[1-9]/.test(event.key)) {
+            event.preventDefault();
+          }}}></input>
+                      </label>
+                  </div>
+                  <div className='card'>
+                      <img className='fruitPics' src={Pear} alt=''></img>
+                      <label htmlFor='numberBox'>Number of Pears
+                        <input className='pearBox' type='number' min='1' max='10' ref={inputPearsRef} onKeyPress={(event) => {
+          if (!/[1-9]/.test(event.key)) {
+            event.preventDefault();
+          }}}></input>
+                      </label>
+                      <div className='addCartContain'>
+                        <button onClick={displayMelonCart} className='addCart'>Add To Cart</button>
+                      </div>
+                  </div>
+                  <div className='card'>
+                      <img className='fruitPics' src={Pineapple} alt=''></img>
+                      <label htmlFor='numberBox'>Number of Pineapples
+                        <input className='pineappleBox' type='number' min='1' max='10' ref={inputPineappleRef} onKeyPress={(event) => {
+          if (!/[1-9]/.test(event.key)) {
+            event.preventDefault();
+          }}}></input>
+                      </label>
+                  </div>
                 </div>
             </div>
         </div>
