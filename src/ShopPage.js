@@ -373,7 +373,7 @@ function ShopPage() {
             </div>
             <div className='header'>
             <Link to='/shopping-cart' className='BackHome'><h3>Home</h3></Link>
-                <h3 style={{color: 'black'}}>Catalog</h3>
+                <h3>Catalog</h3>
             </div>
             <div className="cardContainerWrapper">
               <div className='cardContain'>
