@@ -7,7 +7,6 @@ import DragonFruit from './images/dragonfruit.png';
 import Pear from './images/pear.png';
 import Pineapple from './images/pineapple.png';
 
-// fix url switching setState saving
 function ShopPage() {
   let [toggleHeader, setToggleHeader] = useState(0);
   let [cartMelonItems, setCartMelonItems] = useState([]);
@@ -34,19 +33,21 @@ function ShopPage() {
       melonDiv.remove();
     })
 
-      const cartDisplay = document.querySelector('.cart');
-      const itemTag = document.createElement('img');
-        itemTag.classList.add('melonImg');
-        itemTag.id = 'cartImg';
-        itemTag.src = Watermelon;
-        cartDisplay.appendChild(itemTag);
-        sumTotal();
+      if (cartMelonItems.length !== 0) {
+        const cartDisplay = document.querySelector('.cart');
+        const itemTag = document.createElement('img');
+          itemTag.classList.add('melonImg');
+          itemTag.id = 'cartImg';
+          itemTag.src = Watermelon;
+          cartDisplay.appendChild(itemTag);
+          sumTotal();
 
-      const amount = document.createElement('div');
-      amount.textContent = cartMelonItems.length; // displays amount of each item
-      amount.classList.add('itemAmount');
-      cartDisplay.append(amount);
-      ClearableInput();
+        const amount = document.createElement('div');
+        amount.textContent = cartMelonItems.length; // displays amount of each item
+        amount.classList.add('itemAmount');
+        cartDisplay.append(amount);
+        ClearableInput();
+      }
   }, [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems]);
 
   useEffect(() => {
@@ -55,6 +56,7 @@ function ShopPage() {
       AppleDiv.remove();
     })
 
+    if (cartAppleItems.length !== 0) {
     const cartDisplay = document.querySelector('.cart');
     const itemTag = document.createElement('img');
       itemTag.classList.add('appleImg');
@@ -67,6 +69,8 @@ function ShopPage() {
       amount.textContent = cartAppleItems.length; // displays amount of each item
       amount.classList.add('itemAppleAmount');
       cartDisplay.append(amount);
+      ClearableInput();
+    }
   }, [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems]);
 
   useEffect(() => {
@@ -75,18 +79,21 @@ function ShopPage() {
       OrangeDiv.remove();
     })
 
-    const cartDisplay = document.querySelector('.cart');
-      const itemTag = document.createElement('img');
-      itemTag.classList.add('orangeImg');
-      itemTag.id = 'cartImg';
-      itemTag.src = Orange;
-      cartDisplay.appendChild(itemTag);
-      sumTotal();
+    if (cartOrangeItems.length !== 0) {
+      const cartDisplay = document.querySelector('.cart');
+        const itemTag = document.createElement('img');
+        itemTag.classList.add('orangeImg');
+        itemTag.id = 'cartImg';
+        itemTag.src = Orange;
+        cartDisplay.appendChild(itemTag);
+        sumTotal();
 
-      const amount = document.createElement('div');
-      amount.textContent = cartOrangeItems.length; // displays amount of each item
-      amount.classList.add('itemOrangeAmount');
-      cartDisplay.append(amount);
+        const amount = document.createElement('div');
+        amount.textContent = cartOrangeItems.length; // displays amount of each item
+        amount.classList.add('itemOrangeAmount');
+        cartDisplay.append(amount);
+        ClearableInput();
+    }
 
   }, [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems]);
 
@@ -96,18 +103,21 @@ function ShopPage() {
       dragonDiv.remove();
     })
 
-    const cartDisplay = document.querySelector('.cart');
-      const itemTag = document.createElement('img');
-      itemTag.classList.add('dragonImg');
-      itemTag.id = 'cartImg';
-      itemTag.src = DragonFruit;
-      cartDisplay.appendChild(itemTag);
-      sumTotal();
+    if (cartDragonItems.length !== 0) {
+      const cartDisplay = document.querySelector('.cart');
+        const itemTag = document.createElement('img');
+        itemTag.classList.add('dragonImg');
+        itemTag.id = 'cartImg';
+        itemTag.src = DragonFruit;
+        cartDisplay.appendChild(itemTag);
+        sumTotal();
 
-      const amount = document.createElement('div');
-      amount.textContent = cartDragonItems.length; // displays amount of each item
-      amount.classList.add('itemDragonAmount');
-      cartDisplay.append(amount);
+        const amount = document.createElement('div');
+        amount.textContent = cartDragonItems.length; // displays amount of each item
+        amount.classList.add('itemDragonAmount');
+        cartDisplay.append(amount);
+        ClearableInput();
+    }
 
   }, [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems]);
 
@@ -117,18 +127,21 @@ function ShopPage() {
       pearDiv.remove();
     })
 
-    const cartDisplay = document.querySelector('.cart');
-      const itemTag = document.createElement('img');
-      itemTag.classList.add('pearImg');
-      itemTag.id = 'cartImg';
-      itemTag.src = Pear;
-      cartDisplay.appendChild(itemTag);
-      sumTotal();
+    if (cartPearItems.length !== 0) {
+      const cartDisplay = document.querySelector('.cart');
+        const itemTag = document.createElement('img');
+        itemTag.classList.add('pearImg');
+        itemTag.id = 'cartImg';
+        itemTag.src = Pear;
+        cartDisplay.appendChild(itemTag);
+        sumTotal();
 
-      const amount = document.createElement('div');
-      amount.textContent = cartPearItems.length; // displays amount of each item
-      amount.classList.add('itemPearAmount');
-      cartDisplay.append(amount);
+        const amount = document.createElement('div');
+        amount.textContent = cartPearItems.length; // displays amount of each item
+        amount.classList.add('itemPearAmount');
+        cartDisplay.append(amount);
+        ClearableInput();
+    }
 
   }, [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems]);
 
@@ -138,18 +151,21 @@ function ShopPage() {
       pineappleDiv.remove();
     })
 
-    const cartDisplay = document.querySelector('.cart');
-      const itemTag = document.createElement('img');
-      itemTag.classList.add('pineappleImg');
-      itemTag.id = 'cartImg';
-      itemTag.src = Pineapple;
-      cartDisplay.appendChild(itemTag);
-      sumTotal();
+    if (cartPineappleItems.length !== 0) {
+      const cartDisplay = document.querySelector('.cart');
+        const itemTag = document.createElement('img');
+        itemTag.classList.add('pineappleImg');
+        itemTag.id = 'cartImg';
+        itemTag.src = Pineapple;
+        cartDisplay.appendChild(itemTag);
+        sumTotal();
 
-      const amount = document.createElement('div');
-      amount.textContent = cartPineappleItems.length; // displays amount of each item
-      amount.classList.add('itemPineappleAmount');
-      cartDisplay.append(amount);
+        const amount = document.createElement('div');
+        amount.textContent = cartPineappleItems.length; // displays amount of each item
+        amount.classList.add('itemPineappleAmount');
+        cartDisplay.append(amount);
+        ClearableInput();
+    }
 
   }, [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems]);
 
