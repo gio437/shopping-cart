@@ -184,7 +184,8 @@ function ShopPage() {
       }
   }
 
-  function displayMelonCart() {
+  function displayMelonCart(e) {
+    e.preventDefault();
     const existingImages = document.querySelectorAll('.melonImg');
     existingImages.forEach(melonDiv => {
       melonDiv.remove();
@@ -329,6 +330,21 @@ function ShopPage() {
     ShowCart();
   }
 
+  useEffect(() => {
+    const handleEnterPress = (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        displayMelonCart(event);
+      }
+    };
+
+    window.addEventListener('keyup', handleEnterPress);
+
+    return () => {
+      window.removeEventListener('keyup', handleEnterPress);
+    };
+  }, []);
+
   // will clear textboxes after submission =>
   const inputRef = useRef();
   const inputAppleRef = useRef();
@@ -364,7 +380,7 @@ function ShopPage() {
                   <div className='card'>
                       <img className='fruitPics'src={Watermelon} alt=''></img>
                       <label htmlFor='numberBox'>Number of Watermelons
-                        <input className='melonBox' type='number' min='1' max='10' ref={inputRef} onKeyPress={(event) => {
+                        <input className='melonBox' type='number' min='1' ref={inputRef} onKeyPress={(event) => {
           if (!/[1-9]/.test(event.key)) {
             event.preventDefault();
           }}}></input>
@@ -373,7 +389,7 @@ function ShopPage() {
                   <div className='card'>
                       <img className='fruitPics' src={Apple} alt=''></img>
                       <label htmlFor='numberBox'>Number of Apples
-                        <input className='appleBox' type='number' min='1' max='10' ref={inputAppleRef} onKeyPress={(event) => {
+                        <input className='appleBox' type='number' min='1' ref={inputAppleRef} onKeyPress={(event) => {
           if (!/[1-9]/.test(event.key)) {
             event.preventDefault();
           }}}></input>
@@ -382,7 +398,7 @@ function ShopPage() {
                   <div className='card'>
                       <img className='fruitPics' src={Orange} alt=''></img>
                       <label htmlFor='numberBox'>Number of Oranges
-                        <input className='orangeBox' type='number' min='1' max='10' ref={inputOrangeRef} onKeyPress={(event) => {
+                        <input className='orangeBox' type='number' min='1' ref={inputOrangeRef} onKeyPress={(event) => {
           if (!/[1-9]/.test(event.key)) {
             event.preventDefault();
           }}}></input>
@@ -391,7 +407,7 @@ function ShopPage() {
                   <div className='card'>
                       <img className='fruitPics' src={DragonFruit} alt=''></img>
                       <label htmlFor='numberBox'>Number of Dragonfruits
-                        <input className='dragonBox' type='number' min='1' max='10' ref={inputDragonRef} onKeyPress={(event) => {
+                        <input className='dragonBox' type='number' min='1' ref={inputDragonRef} onKeyPress={(event) => {
           if (!/[1-9]/.test(event.key)) {
             event.preventDefault();
           }}}></input>
@@ -400,19 +416,20 @@ function ShopPage() {
                   <div className='card'>
                       <img className='fruitPics' src={Pear} alt=''></img>
                       <label htmlFor='numberBox'>Number of Pears
-                        <input className='pearBox' type='number' min='1' max='10' ref={inputPearsRef} onKeyPress={(event) => {
+                        <input className='pearBox' type='number' min='1' ref={inputPearsRef} onKeyPress={(event) => {
           if (!/[1-9]/.test(event.key)) {
             event.preventDefault();
           }}}></input>
                       </label>
-                      <div className='addCartContain'>
-                        <button onClick={displayMelonCart} className='addCart'>Add To Cart</button>
-                      </div>
+                      <form className='addCartContain' onSubmit={displayMelonCart}>
+                        <input type='text' style={{ display: 'none' }} />
+                        <input type='submit' className='addCart' value='Add To Cart'></input>
+                      </form>
                   </div>
                   <div className='card'>
                       <img className='fruitPics' src={Pineapple} alt=''></img>
                       <label htmlFor='numberBox'>Number of Pineapples
-                        <input className='pineappleBox' type='number' min='1' max='10' ref={inputPineappleRef} onKeyPress={(event) => {
+                        <input className='pineappleBox' type='number' min='1' ref={inputPineappleRef} onKeyPress={(event) => {
           if (!/[1-9]/.test(event.key)) {
             event.preventDefault();
           }}}></input>
