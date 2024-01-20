@@ -1,0 +1,209 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h3 {
+  margin-left: 2rem;
+  font-size: 1.5rem;
+}
+
+.header {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+  gap: 3rem;
+  flex-direction: column;
+}
+
+.shopBtn {
+  background-color: black;
+  color: white;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  width: 10rem;
+  font-size: 2rem;
+  text-decoration: none;
+  text-align: center;
+  position: absolute;
+}
+
+.slogan {
+  position: absolute;
+  font-weight: bold;
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10rem;
+}
+
+.shelf {
+  min-width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-size: 3rem;
+}
+
+.BackHome {
+  text-decoration: none;
+  color: inherit;
+}
+
+.addCartContain {
+  margin-top: 5rem;
+}
+
+.addCart {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  width: 9rem;
+}
+
+.itemAmount {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-right: 2rem;
+}
+
+.itemAppleAmount {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-right: 2rem;
+}
+
+.itemOrangeAmount {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-right: 2rem;
+}
+
+.itemDragonAmount {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-right: 2rem;
+}
+
+.itemPearAmount {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-right: 2rem;
+}
+
+.itemPineappleAmount {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-right: 2rem;
+}
+
+.homeShop {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cart {
+  display: none;
+  background-color: white;
+}
+
+#cartImg {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+input {
+  width: 8rem;
+  margin-left: 3rem;
+}
+
+.cartBtn {
+  cursor: pointer;
+}
+
+.cardContainerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.cardContain {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10rem;
+}
+
+.card {
+  width: 15rem;
+  height: 15rem;
+}
+
+.fruitPics {
+  width: 15rem;
+  height: 15rem;
+}
+
+.checkout {
+  display: flex;
+  justify-content: end;
+  display: none;
+  gap: 2rem;
+}
+
+.checkoutBtn {
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
