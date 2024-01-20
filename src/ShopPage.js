@@ -365,15 +365,15 @@ function ShopPage() {
     return (
         <div>
             <div className='cart'>
-                <h3>Cart</h3>
+                <h3>Cart:</h3>
             </div>
             <div className='checkout'>
                 <h3 className='counter'></h3>
                 <button onClick={ClearCart} className='checkoutBtn'>Checkout (Clears Cart)</button>
             </div>
             <div className='header'>
-            <Link to='/shopping-cart' className='BackHome'><h3>Home</h3></Link>
-                <h3>Catalog</h3>
+            <Link to='/shopping-cart' className='BackHome'><h2>Home</h2></Link>
+                <h2>Catalog</h2>
             </div>
             <div className="cardContainerWrapper">
               <div className='cardContain'>

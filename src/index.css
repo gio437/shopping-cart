@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+h3 {
+  margin-left: 2rem;
+  font-size: 1.5rem;
+}
+
 .header {
   background-color: black;
   display: flex;
@@ -31,9 +36,10 @@ code {
 .shopBtn {
   background-color: black;
   color: white;
-  padding: 1rem;
+  padding: 1.5rem;
+  margin-top: 3rem;
   width: 10rem;
-  font-size: 20px;
+  font-size: 2rem;
   text-decoration: none;
   text-align: center;
   position: absolute;
@@ -42,7 +48,7 @@ code {
 .slogan {
   position: absolute;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 3rem;
   color: white;
   display: flex;
   justify-content: center;
@@ -50,7 +56,6 @@ code {
 }
 
 .shelf {
-  min-height: 100%;
   min-width: 100%;
 }
 
@@ -136,8 +141,8 @@ code {
 }
 
 #cartImg {
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   margin: 1rem;
 }
 

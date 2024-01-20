@@ -10,8 +10,8 @@ export default function App() {
 
       </div>
       <div className='header'>
-        <h3>Home</h3>
-        <Link className='homeShop' to='/shop'> <h3>Catalog</h3></Link>
+        <h2>Home</h2>
+        <Link className='homeShop' to='/shop'> <h2>Catalog</h2></Link>
       </div>
       <div className='info'>
         <img className='shelf' alt='' src={Shelf}></img>
