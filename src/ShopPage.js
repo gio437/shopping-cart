@@ -17,6 +17,9 @@ function ShopPage() {
   let [cartPineappleItems, setCartPineappleItems] = useState([]);
   let [totalCartItems, setTotalCartItems] = useState(0);
 
+  let itemArr = [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems];
+  let fruitArr = ['melon', 'apple', 'orange', 'dragon', 'pear', 'pineapple'];
+
   function sumTotal() {
     setTotalCartItems(prev => prev = cartMelonItems.length + cartAppleItems.length + cartOrangeItems.length + cartDragonItems.length + cartPearItems.length + cartPineappleItems.length);
   }
@@ -33,21 +36,25 @@ function ShopPage() {
       melonDiv.remove();
     })
 
-      if (cartMelonItems.length !== 0) {
+    for (let i = 0; i < itemArr.length; i++) {
+      if (itemArr[i].length !== 0) {
         const cartDisplay = document.querySelector('.cart');
         const itemTag = document.createElement('img');
-          itemTag.classList.add('melonImg');
+          itemTag.classList.add(`${fruitArr[i]}`);
           itemTag.id = 'cartImg';
-          itemTag.src = Watermelon;
+          itemTag.src = `${fruitArr[i][0].toUpperCase()}`;
+          console.log(itemTag.src);
           cartDisplay.appendChild(itemTag);
           sumTotal();
-
+        console.log(itemArr[i])
         const amount = document.createElement('div');
-        amount.textContent = cartMelonItems.length; // displays amount of each item
+        amount.textContent = `${itemArr[i]}`.length; // displays amount of each item
+        console.log(amount.textContent);
         amount.classList.add('itemAmount');
         cartDisplay.append(amount);
         ClearableInput();
       }
+    }
   }, [cartMelonItems, cartAppleItems, cartOrangeItems, cartDragonItems, cartPearItems, cartPineappleItems]);
 
   useEffect(() => {
