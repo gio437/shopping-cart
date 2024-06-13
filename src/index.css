@@ -23,6 +23,8 @@ h3 {
   justify-content: space-around;
   color: white;
   font-size: 3rem;
+  padding: 1rem;
+  flex-wrap: wrap;
 }
 
 .info {
@@ -173,6 +175,7 @@ input {
   .header {
     flex-direction: column;
     font-size: 2rem;
+    padding: 1rem;
   }
 
   h3 {
@@ -204,6 +207,9 @@ input {
     padding: 10px 20px;
     font-size: 14px;
     width: 7rem;
+    margin-top: 30rem;
+    
+    position: absolute;
   }
 
   .itemAmount,
