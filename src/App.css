@@ -22,6 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px;
 }
 
 .App-link {
@@ -34,5 +35,21 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .App-header {
+    font-size: calc(8px + 2vmin);
+    padding: 10px;
+  }
+
+  .App-logo {
+    height: 30vmin;
+  }
+
+  .App-link {
+    font-size: 1.5rem;
   }
 }
