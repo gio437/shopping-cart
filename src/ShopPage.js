@@ -25,6 +25,7 @@ function ShopPage() {
     const counterDiv = document.querySelector('.counter');
     console.log(totalCartItems);
     counterDiv.textContent = 'Total Items: ' + totalCartItems;
+    window.scrollTo(0, 0);
   }, [totalCartItems]);
 
   useEffect(() => {
